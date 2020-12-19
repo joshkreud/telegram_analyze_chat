@@ -1,0 +1,6 @@
+pandas
+black
+adodbapi
+pyodbc
+xlrd
+openpyxl
