@@ -4,3 +4,4 @@ adodbapi
 pyodbc
 xlrd
 openpyxl
+ipykernel
