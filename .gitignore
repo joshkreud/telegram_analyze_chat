@@ -1,2 +1,4 @@
-in/
+data/
 */__pycache__/*
+*.ipynb
+*.pyc

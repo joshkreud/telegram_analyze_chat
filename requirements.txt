@@ -5,3 +5,6 @@ pyodbc
 xlrd
 openpyxl
 ipykernel
+jupyter
+jupytext
+matplotlib
