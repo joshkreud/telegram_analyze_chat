@@ -5,5 +5,12 @@
   "settings": {
     "terminal.integrated.shell.linux": null
   },
-  "extensions": ["ms-python.python", "ms-python.vscode-pylance"]
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "visualstudioexptteam.vscodeintellicode",
+    "mechatroner.rainbow-csv",
+    "njpwerner.autodocstring",
+    "ms-toolsai.jupyter"
+  ]
 }
