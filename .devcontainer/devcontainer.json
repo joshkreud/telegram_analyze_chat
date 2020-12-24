@@ -1,16 +1,18 @@
 {
   "name": "Debug Configuration",
   "context": "..",
-  "dockerFile": "Dockerfile",
+  "dockerFile": "../Dockerfile",
   "settings": {
     "terminal.integrated.shell.linux": null
   },
   "extensions": [
     "ms-python.python",
     "ms-python.vscode-pylance",
+    "ms-toolsai.jupyter",
+    "davidanson.vscode-markdownlint",
     "visualstudioexptteam.vscodeintellicode",
-    "mechatroner.rainbow-csv",
-    "njpwerner.autodocstring",
-    "ms-toolsai.jupyter"
-  ]
+    "aaron-bond.better-comments",
+    "vscode-icons-team.vscode-icons"
+  ],
+  "remoteUser": "developer"
 }
