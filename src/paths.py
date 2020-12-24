@@ -4,6 +4,11 @@ DATA_PATH = "./data/"
 OUTPUT_PATH = "./outputs/"
 
 
+def data_path() -> Path:
+    p = Path(DATA_PATH)
+    return p
+
+
 def raw_data_path() -> Path:
     p = Path(DATA_PATH)
     p = p / "raw/result.json"
@@ -20,4 +25,4 @@ def processed_data_path() -> Path:
 
 
 def output_path() -> Path:
-    return OUTPUT_PATH
+    return Path(OUTPUT_PATH)
