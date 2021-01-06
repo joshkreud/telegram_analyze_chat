@@ -3,3 +3,4 @@ data/
 *.ipynb
 *.pyc
 outputs/
+*-checkpoint.py
