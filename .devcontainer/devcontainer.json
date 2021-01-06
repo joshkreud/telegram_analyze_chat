@@ -6,7 +6,6 @@
     "dockerfile": "Dockerfile",
     "context": ".."
   },
-
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash",
     "python.pythonPath": "/usr/local/bin/python",
@@ -22,7 +21,6 @@
     "python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
     "python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
   },
-
   "extensions": [
     "ms-python.python",
     "ms-python.vscode-pylance",
@@ -32,8 +30,6 @@
     "aaron-bond.better-comments",
     "vscode-icons-team.vscode-icons"
   ],
-
-  // "postCreateCommand": "pip3 install --user -r requirements.txt",
-
+  "postCreateCommand": "sudo chown -R vscode:vscode .",
   "remoteUser": "vscode"
 }
