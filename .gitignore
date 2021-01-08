@@ -4,3 +4,4 @@ data/
 *.pyc
 outputs/
 *-checkpoint.py
+altair-data-*

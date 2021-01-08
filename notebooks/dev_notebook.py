@@ -30,6 +30,8 @@ from PIL import Image
 from pathlib import Path
 import matplotlib.pyplot as plt
 import seaborn as sns
+import altair as alt
+alt.data_transformers.enable('json')
 
 # %% [markdown]
 # # Load Data
