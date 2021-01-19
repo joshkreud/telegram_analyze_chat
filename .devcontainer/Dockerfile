@@ -1,5 +1,3 @@
-# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.154.0/containers/python-3/.devcontainer/base.Dockerfile
-
 ARG VARIANT="3.9"
 FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 
@@ -11,10 +9,22 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends  unixodbc-dev \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
-COPY requirements.txt /tmp/pip-tmp/
-RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
-    && rm -rf /tmp/pip-tmp
+USER vscode
+WORKDIR /home/vscode
 
-COPY .devcontainer/requirements.txt /tmp/pip-tmp-dev/
-RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp-dev/requirements.txt \
-    && rm -rf /tmp/pip-tmp-dev
+COPY --chown=vscode:vscode requirements.txt ./pip-tmp/
+RUN pip3 --disable-pip-version-check --no-cache-dir install -r ./pip-tmp/requirements.txt \
+    && rm -rf ./pip-tmp
+
+COPY --chown=vscode:vscode .devcontainer/requirements.txt ./pip-tmp-dev/
+RUN pip3 --disable-pip-version-check --no-cache-dir install -r ./pip-tmp-dev/requirements.txt \
+    && rm -rf ./pip-tmp-dev
+
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyterlab-plotly plotlywidget
+
+RUN python3 -m spacy download nl_core_news_sm \
+    && python3 -m spacy download en_core_web_sm \
+    && python3 -m spacy download de_core_news_sm \
+    && python3 -m spacy download xx_ent_wiki_sm
+
+ENV PATH="/home/vscode/.local/bin:${PATH}"
